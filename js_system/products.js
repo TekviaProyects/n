@@ -14,7 +14,7 @@ var products = {
 		
 		$.ajax({
 			data : $objet,
-			url : 'views/add.php',
+			url : 'views/add_product.php',
 			type : 'post',
 			dataType : 'html'
 		}).done(function(resp) {

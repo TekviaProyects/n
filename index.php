@@ -51,6 +51,9 @@
 
 		<!-- Head Libs -->
 		<script src="vendor/modernizr/modernizr.min.js"></script>
+		
+	<!-- sweetalert -->
+		<link rel="stylesheet" href="plugins/sweetalert-master/dist/sweetalert.css" />
 
 	</head>
 	<body class="loading-overlay-showing" data-loading-overlay>
@@ -929,8 +932,11 @@
 
 		<!-- Theme Initialization Files -->
 		<script src="js/theme.init.js"></script>
+		
+	<!-- sweetalert -->
+		<script type="text/javascript" src="https://unpkg.com/sweetalert2@7.11.0/dist/sweetalert2.all.js"></script>
 
-		<!-- System -->
+	<!-- System -->
 		<script src="js_system/categories.js"></script>
 		<script src="js_system/products.js"></script>
 
