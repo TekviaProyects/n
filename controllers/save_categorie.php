@@ -1,8 +1,8 @@
 <?php 
+	error_reporting(0);
+	
 	$estructura = '../data_cat';
-	if(!mkdir($estructura, 0777, true)) {
-	    die('Fallo al crear las carpetas...');
-	}
+	mkdir($estructura, 0777, true);
 	
 	$date = $resp['date'] = date('Y-m-d H:i:s');
 	$image = 'data_cat/'.date('H-i-s').basename($_FILES['image']['name']);
@@ -13,7 +13,7 @@
 	
 	$conexion = ($_SERVER['SERVER_NAME'] == 'localhost') ? 
 		new mysqli("localhost", "root", "", "n"): 
-		new mysqli("localhost", "tc000457_inmo", "PEla06rapo", "tc000457_inmo");
+		new mysqli("localhost", "p9000570_n", "lo24woPEzi", "p9000570_n");
 	
 	$sql = "INSERT INTO
 				categories(name, image)

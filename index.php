@@ -1,3 +1,6 @@
+<?php
+	error_reporting(0);
+?>	
 <!DOCTYPE html>
 <html>
 	<head>
@@ -747,22 +750,8 @@
 									<h2 class="font-weight-normal mt-1 mb-0">Visita las Soluciones que tenemos para tu Negocio. </h2>
 								</div>
 							</div>
-							<div class="row pb-4 mb-4">
-								<div class="col-md-4 mt-3">
-									<div class="special-offer-item text-center text-color-light">
-										<a href="demo-real-estate-properties.html" class="text-decoration-none"> <span class="special-offer-wrapper"> <img src="img/demos/real-estate/listings/26.png" class="img-fluid" alt=""> <span class="special-offer-infos text-color-light"> <span class="special-offer-title font-weight-normal text-5 p-1 mb-2"> BARES </span> <span class="btn btn-secondary text-uppercase custom-padding-1 d-inline-block">VER</span> </span> </span> </a>
-									</div>
-								</div>
-								<div class="col-md-4 mt-3">
-									<div class="special-offer-item text-center text-color-light">
-										<a href="demo-real-estate-properties.html" class="text-decoration-none"> <span class="special-offer-wrapper"> <img src="img/demos/real-estate/listings/27.png" class="img-fluid" alt=""> <span class="special-offer-infos text-color-light"> <span class="special-offer-title font-weight-normal text-5 p-1 mb-2"> CAFETERIAS </span> <span class="btn btn-secondary text-uppercase custom-padding-1 d-inline-block">VER</span> </span> </span> </a>
-									</div>
-								</div>
-								<div class="col-md-4 mt-3">
-									<div class="special-offer-item text-center text-color-light">
-										<a href="demo-real-estate-properties.html" class="text-decoration-none"> <span class="special-offer-wrapper"> <img src="img/demos/real-estate/listings/28.png" class="img-fluid" alt=""> <span class="special-offer-infos text-color-light"> <span class="special-offer-title font-weight-normal text-5 p-1 mb-2"> COCINAS </span> <span class="btn btn-secondary text-uppercase custom-padding-1 d-inline-block">VER</span> </span> </span> </a>
-									</div>
-								</div>
+							<div class="row pb-4 mb-4" id="div_cats">
+								
 							</div>
 						</div>
 						<div class="col-lg-3">
@@ -951,6 +940,16 @@
 		ga('send', 'pageview');
 		</script>
 		-->
-
+		<script>
+			categories.list_categories({
+				div: 'div_cats',
+				edit: '<?php echo $_REQUEST['edit'] ?>'
+			});
+			
+			products.list_products({
+				div: 'listingLoadMoreWrapper',
+				edit: '<?php echo $_REQUEST['edit'] ?>'
+			});
+		</script>
 	</body>
 </html>

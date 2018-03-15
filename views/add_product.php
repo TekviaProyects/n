@@ -1,10 +1,11 @@
 <?php 
-	error_reporting(E_ALL);
+	// error_reporting(E_ALL);
+	error_reporting(0);
 	mysqli_report(MYSQLI_REPORT_STRICT);
 	
 	$conexion = ($_SERVER['SERVER_NAME'] == 'localhost') ? 
 		new mysqli("localhost", "root", "", "n"): 
-		new mysqli("localhost", "tc000457_inmo", "PEla06rapo", "tc000457_inmo");
+		new mysqli("localhost", "p9000570_n", "lo24woPEzi", "p9000570_n");
 		
 	if (mysqli_connect_errno()) {
 	    printf("Falló la conexión failed: %s\n", $mysqli->connect_error);
@@ -39,47 +40,49 @@
 				<div class="row">
 					<div class="col-sm-12 col-md-6">
 						<label>Nombre</label>
-						<input class="form-control" type="text" id="name" required="1" />
+						<input class="form-control" type="text" id="name" required="1" value="<?php echo $_REQUEST['name'] ?>" />
 					</div>
 					<div class="col-sm-12 col-md-6">
 						<label>Modelo</label>
-						<input class="form-control" type="text" id="model" required="1" />
+						<input class="form-control" type="text" id="model" required="1" value="<?php echo $_REQUEST['model'] ?>"/>
 					</div>
 				</div>
 				<div class="row">
 					<div class="col-sm-12 col-md-6">
 						<label>Campo 1</label>
-						<input class="form-control" type="text" id="c1" required="1" />
+						<input class="form-control" type="text" id="c1" value="<?php echo $_REQUEST['c1'] ?>"/>
 						<label>Campo 2</label>
-						<input class="form-control" type="text" id="c2" required="1" />
+						<input class="form-control" type="text" id="c2" value="<?php echo $_REQUEST['c2'] ?>"/>
 					</div>
 					<div class="col-sm-12 col-md-6">
 						<label>Descripción</label>
-						<textarea class="form-control" rows="4" id="descripction" required="1"></textarea>
+						<textarea class="form-control" rows="4" id="description" required="1"><?php echo $_REQUEST['description'] ?></textarea>
 					</div>
 				</div>
 				
 				<div class="row">
 					<div class="col-sm-12 col-md-6">
 						<label>Campo 3</label>
-						<input class="form-control" type="text" id="c3" required="1" />
+						<input class="form-control" type="text" id="c3" value="<?php echo $_REQUEST['c3'] ?>"/>
 					</div>
 					<div class="col-sm-12 col-md-6">
-						<label>Imagen</label>
+						<label>Imagen</label><?php
+						$required = ($_REQUEST['edit'] == 1) ? '' : 'required="1"'; ?>						
+						
 						<input 
 							class="form-control" 
 							type="file" 
 							id="image" 
 							name="image[]" 
 							multiple="multiple" 
-							required="1" 
+							<?php echo $required ?>
 							accept="image/*" />
 					</div>
 				</div>
 				<div class="row">
 					<div class="col-sm-12 col-md-6">
 						<label>Categoria</label><br />
-						<select class="custom-select"><?php
+						<select class="custom-select" id="cat_id"><?php
 							foreach ($cats as $key => $value) { ?>
 								<option value="<?php echo $value['id'] ?>">
 									<?php echo $value['name'] ?>
@@ -97,6 +100,13 @@
 		</div>
 	</div>
 </div>
+<?php 
+	if ($_REQUEST['cat_id']) { ?>
+		<script>
+			$("#cat_id").val(<?php echo $_REQUEST['cat_id'] ?>);
+		</script><?php
+	}
+?>
 <script>
 	function validate(){
 		var data = {},
@@ -164,17 +174,24 @@
 		formData.append("model", data.model);
 		formData.append("cat_id", data.cat_id);
 		formData.append("description", data.description);
+		formData.append("id", '<?php echo $_REQUEST['id'] ?>');
 		
 		console.log('==========> DATA', data);
 		console.log('==========> formData', formData);
 		
 		$("#btnSubir").prop('disabled', true);
-		$("#btnSubir").html('Cargando...');
+		$("#btnSubir").html('Cargando...');<?php 
+		
+		if ($_REQUEST['edit'] == 1) { ?>
+			var url = "controllers/edit_product.php";<?php
+		} else { ?>
+			var url = "controllers/save_product.php";<?php
+		} ?>
 		
 		$.ajax({
 			type : "POST",
 			enctype : 'multipart/form-data',
-			url : "save_product.php",
+			url : url,
 			data : formData,
 			processData : false,
 			contentType : false,
@@ -194,6 +211,12 @@
 			
 			$("#btnSubir").prop('disabled', false);
 			$("#btnSubir").html('Guardar');
+			
+			$('#form_data')[0].reset();<?php
+			
+			if ($_REQUEST['edit'] == 1) { ?>
+				location.reload();<?php
+			} ?>
 		}).fail(function(resp) {
 			console.log('==========> fail !!! save', resp);
 			
@@ -208,6 +231,4 @@
 			});
 		});
 	}
-	
-	init();
 </script>
