@@ -313,12 +313,6 @@
 					</div>
 				</div>
 			</header>
-			<div class="row" style="padding: 20px">
-				<div class="col-sm-12" id="contenedor" >
-					
-				</div>
-			</div>
-
 			<div role="main" class="main">
 				<div class="slider-container light rev_slider_wrapper" style="height: 650px;">
 					<div id="revolutionSlider" class="slider rev_slider" data-plugin-revolution-slider data-plugin-options="{'delay': 9000, 'gridwidth': 1170, 'gridheight': 650, 'disableProgressBar': 'on', 'navigation': {'arrows': {'enable': true, 'left':{'container':'slider','h_align':'right','v_align':'center','h_offset':20,'v_offset':-80},'right':{'container':'slider','h_align':'right','v_align':'center','h_offset':20,'v_offset':80}}}}">
@@ -520,6 +514,11 @@
 								data-mask_in="x:0px;y:0px;">IR A PRODUCTOS</a>
 							</li>
 						</ul>
+					</div>
+				</div>
+				<div class="row" style="padding: 20px">
+					<div class="col-sm-12" id="contenedor" >
+						
 					</div>
 				</div>
 				<div class="container">
