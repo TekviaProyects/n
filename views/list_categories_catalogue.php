@@ -12,7 +12,7 @@
 	}
 	
 	$condition = '';
-	$condition .= (!empty($_POST['cat_id'])) ? ' AND cat_id = '.$_POST['cat_id'] : '';
+	$condition .= (!empty($_POST['id'])) ? ' AND id = '.$_POST['cat_id'] : '';
 	
 	$condition .= (!empty($_POST['order'])) ? ' ORDER BY '.$_POST['order'] : ' ORDER BY id DESC';
 	$condition .= (!empty($_POST['limit'])) ? ' LIMIT '.$_POST['limit'] : '';
@@ -20,7 +20,7 @@
 	$sql = "SELECT
 				*
 			FROM
-				products 
+				categories 
 			WHERE 
 				1= 1 ".
 			$condition;
@@ -41,7 +41,7 @@
 		<div align="center">
 			<h3>
 				<span class="label label-default">
-					* Sin productos *
+					* Sin categorias *
 				</span>
 			</h3>
 		</div><?php
@@ -49,54 +49,47 @@
 		return;
 	}
 	
-	// echo "<pre>", print_r($rows), "</pre>";
-	
-	foreach ($rows as $key => $value) { 
-		$image = explode(', ', $value['images']); ?>
-		
+	foreach ($rows as $key => $value) { ?>
 		<div class="col-md-6 col-lg-4 p-3 isotope-item"><?php
-			if ($_REQUEST['edit'] == 1) {
-				$value['edit'] = 1;
-				$value['div'] = 'contenedor';
-				$product = json_encode($value);
-				$product = str_replace('"', "'", $product); ?>
-				
+			if ($_REQUEST['edit'] == 1) { ?>
 				<a 
 					href="#contenedor"
-					onclick="products.add(<?php echo $product ?>)"
+					onclick="categories.add({
+						id: <?php echo $value['id'] ?>,
+						name: '<?php echo $value['name'] ?>',
+						image: '<?php echo $value['image'] ?>',
+						div: 'div_cats',
+						edit: 1
+					})"
 					class="btn btn-primary btn-block">
 					Editar
 				</a><?php
 			} ?>
 			<div class="listing-item">
-				<a href="catalogue.php" class="text-decoration-none">
+				<a 
+					href="#listingLoadMoreWrapper"
+					onclick="products.list_products({
+						edit: '<?php echo $_REQUEST['edit'] ?>',
+						cat_id: <?php echo $value['id'] ?>,
+						view: 'list_products_catalogue',
+						div: 'div_cats'
+					})" 
+					class="text-decoration-none">
 					<div class="thumb-info thumb-info-lighten">
-						<div class="thumb-info-wrapper m-0" style="height: 185px; width: 250px">
+						<div class="thumb-info-wrapper m-0" style="height: 200px; width: 350px">
 							<img 
+								src="<?php echo $value['image'] ?>" 
 								onerror="this.onerror=null;this.src='img/apple-touch-icon.png';" 
-								src="<?php echo $image[0] ?>" 
-								class="img-fluid" 
-								alt="">
+								class="img-fluid" alt="">
+							<div class="thumb-info-listing-type background-color-secondary text-uppercase text-color-light font-weight-semibold p-1 pl-3 pr-3">
+								+
+							</div>
 						</div>
 						<div class="thumb-info-price background-color-primary text-color-light text-4 p-2 pl-4 pr-4">
-							<?php echo $value['model'] ?>
+							<?php echo $value['name'] ?> 
 							<i class="fa fa-caret-right text-color-secondary float-right"></i>
 						</div>
 						<div class="custom-thumb-info-title b-normal p-4">
-							<div class="thumb-info-inner text-3">
-								<?php echo $value['name'] ?>
-							</div>
-							<ul class="accommodations text-uppercase font-weight-bold p-0 mb-0 text-2">
-								<li>
-									<span class="accomodation-title"><?php echo $value['c1'] ?></span>
-								</li>
-								<li>
-									<span class="accomodation-title"><?php echo $value['c2'] ?></span>
-								</li>
-								<li>
-									<span class="accomodation-title"><?php echo $value['c3'] ?></span>
-								</li>
-							</ul>
 						</div>
 					</div> 
 				</a>

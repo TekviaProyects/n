@@ -12,7 +12,7 @@
 	}
 	
 	$condition = '';
-	$condition .= (!empty($_POST['cat_id'])) ? ' AND cat_id = '.$_POST['cat_id'] : '';
+	$condition .= (!empty($_POST['id'])) ? ' AND id = '.$_POST['cat_id'] : '';
 	
 	$condition .= (!empty($_POST['order'])) ? ' ORDER BY '.$_POST['order'] : ' ORDER BY id DESC';
 	$condition .= (!empty($_POST['limit'])) ? ' LIMIT '.$_POST['limit'] : '';
@@ -74,7 +74,7 @@
 						div: 'listingLoadMoreWrapper'
 					})"
 					class="text-decoration-none"> 
-					<span class="special-offer-wrapper"  style="height: 185px; width: 250px"> 
+					<span class="special-offer-wrapper" style="height: 185px; width: 250px"> 
 						<img 
 							src="<?php echo $value['image'] ?>" 
 							onerror="this.onerror=null;this.src='img/apple-touch-icon.png';" 

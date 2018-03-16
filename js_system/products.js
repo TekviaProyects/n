@@ -72,7 +72,7 @@ var products = {
 		
 		$.ajax({
 			data : $objet,
-			url : 'views/details.php',
+			url : 'views/details_product.php',
 			type : 'post',
 			dataType : 'html'
 		}).done(function(resp) {

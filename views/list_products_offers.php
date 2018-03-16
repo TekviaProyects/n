@@ -1,5 +1,6 @@
 <?php 
-	error_reporting(E_ALL);
+	// error_reporting(E_ALL);
+	error_reporting(0);
 	mysqli_report(MYSQLI_REPORT_STRICT);
 	
 	$conexion = ($_SERVER['SERVER_NAME'] == 'localhost') ? 
@@ -54,7 +55,8 @@
 	foreach ($rows as $key => $value) { 
 		$image = explode(', ', $value['images']); ?>
 		
-		<div class="col-md-6 col-lg-4 p-3 isotope-item"><?php
+		<div class="col-md-6 col-lg-12"><?php
+		
 			if ($_REQUEST['edit'] == 1) {
 				$value['edit'] = 1;
 				$value['div'] = 'contenedor';
@@ -68,37 +70,17 @@
 					Editar
 				</a><?php
 			} ?>
-			<div class="listing-item">
+			
+			<div class="special-offer-item text-center text-color-light">
 				<a href="catalogue.php" class="text-decoration-none">
-					<div class="thumb-info thumb-info-lighten">
-						<div class="thumb-info-wrapper m-0" style="height: 185px; width: 250px">
-							<img 
-								onerror="this.onerror=null;this.src='img/apple-touch-icon.png';" 
-								src="<?php echo $image[0] ?>" 
-								class="img-fluid" 
-								alt="">
-						</div>
-						<div class="thumb-info-price background-color-primary text-color-light text-4 p-2 pl-4 pr-4">
-							<?php echo $value['model'] ?>
-							<i class="fa fa-caret-right text-color-secondary float-right"></i>
-						</div>
-						<div class="custom-thumb-info-title b-normal p-4">
-							<div class="thumb-info-inner text-3">
-								<?php echo $value['name'] ?>
-							</div>
-							<ul class="accommodations text-uppercase font-weight-bold p-0 mb-0 text-2">
-								<li>
-									<span class="accomodation-title"><?php echo $value['c1'] ?></span>
-								</li>
-								<li>
-									<span class="accomodation-title"><?php echo $value['c2'] ?></span>
-								</li>
-								<li>
-									<span class="accomodation-title"><?php echo $value['c3'] ?></span>
-								</li>
-							</ul>
-						</div>
-					</div> 
+					<span class="special-offer-wrapper" style="height: 185px; width: 250px">
+						<img 
+							onerror="this.onerror=null;this.src='img/apple-touch-icon.png';" 
+							src="<?php echo $image[0] ?>" 
+							class="img-fluid" 
+							alt=""> 
+						<span class="special-offer-infos text-color-light"> </span> 
+					</span> 
 				</a>
 			</div>
 		</div><?php

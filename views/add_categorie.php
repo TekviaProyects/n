@@ -1,5 +1,6 @@
 <?php 
-	error_reporting(E_ALL);
+	// error_reporting(E_ALL);
+	error_reporting(0);
 	mysqli_report(MYSQLI_REPORT_STRICT);
 	
 	$conexion = ($_SERVER['SERVER_NAME'] == 'localhost') ? 

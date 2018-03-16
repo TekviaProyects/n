@@ -110,7 +110,7 @@
 							<div class="header-column">
 								<div class="header-row">
 									<div class="header-logo">
-										<a href="demo-real-estate.html"> <img alt="Porto" width="143" height="40" src="img/demos/real-estate/logo-real-estate.png"> </a>
+										<a href="index.php"> <img alt="Porto" width="143" height="40" src="img/demos/real-estate/logo-real-estate.png"> </a>
 									</div>
 								</div>
 							</div>
@@ -143,14 +143,14 @@
 														</li><?php
 													} ?>
 													<li class="dropdown-full-color dropdown-quaternary">
-														<a class="nav-link active" href="demo-real-estate.html"> Inicio </a>
+														<a class="nav-link active" href="index.php"> Inicio </a>
 													</li>
 
 													<li class="dropdown-full-color dropdown-quaternary">
-														<a class="nav-link" href="demo-real-estate-properties.html"> Catalogo </a>
+														<a class="nav-link" href="catalogue.php"> Catalogo </a>
 													</li>
 													<li class="dropdown-full-color dropdown-quaternary">
-														<a class="nav-link" href="demo-real-estate-properties.html"> Metodos de Pago </a>
+														<a class="nav-link" href="catalogue.php"> Metodos de Pago </a>
 													</li>
 
 													<li class="dropdown dropdown-full-color dropdown-quaternary">
@@ -164,7 +164,7 @@
 														<ul class="dropdown-menu custom-fullwidth-dropdown-menu">
 															<li>
 																<div class="dropdown-mega-content">
-																	<form id="propertiesFormHeader" action="demo-real-estate-properties.html" method="POST">
+																	<form id="propertiesFormHeader" action="catalogue.php" method="POST">
 																		<div class="container p-0">
 																			<div class="form-row">
 																				<div class="form-group col-lg-2 mb-0">
@@ -320,7 +320,7 @@
 							<span class="atual">1</span>
 							<span class="total">3</span>
 						</div>
-						<ul>
+						<ul id="div_products_main">
 							<li data-transition="fade">
 								<img src="img/demos/real-estate/slides/1.png"
 								alt=""
@@ -738,15 +738,13 @@
 											<div class="bounce3"></div>
 										</div>
 									</div>
-
-									<button id="listingLoadMore" type="button" class="btn btn-secondary btn-xs text-3 text-uppercase outline-none custom-padding-1">
-										Ver Mas...
-									</button>
 								</div>
 							</div>
 							<div class="row pb-2">
 								<div class="col">
-									<h2 class="font-weight-normal mt-1 mb-0">Visita las Soluciones que tenemos para tu Negocio. </h2>
+									<h2 class="font-weight-normal mt-1 mb-0">
+										Visita las Soluciones que tenemos para tu Negocio. 
+									</h2>
 								</div>
 							</div>
 							<div class="row pb-4 mb-4" id="div_cats">
@@ -760,15 +758,15 @@
 										<h2 class="font-weight-normal mb-4"> Ofertas Especiales </h2>
 									</div>
 								</div>
-								<div class="row">
+								<div class="row" id="div_ofertas">
 									<div class="col-md-6 col-lg-12">
 										<div class="special-offer-item text-center text-color-light">
-											<a href="demo-real-estate-properties.html" class="text-decoration-none"> <span class="special-offer-wrapper"> <img src="img/demos/real-estate/offers/1.jpeg" class="img-fluid" alt=""> <span class="special-offer-infos text-color-light"> </span> </span> </a>
+											<a href="catalogue.php" class="text-decoration-none"> <span class="special-offer-wrapper"> <img src="img/demos/real-estate/offers/1.jpeg" class="img-fluid" alt=""> <span class="special-offer-infos text-color-light"> </span> </span> </a>
 										</div>
 									</div>
 									<div class="col-md-6 col-lg-12">
 										<div class="special-offer-item text-center text-color-light">
-											<a href="demo-real-estate-properties.html" class="text-decoration-none"> <span class="special-offer-wrapper"> <img src="img/demos/real-estate/offers/2.jpeg" class="img-fluid" alt=""> <span class="special-offer-infos text-color-light pt-4"> </span> </span> </a>
+											<a href="catalogue.php" class="text-decoration-none"> <span class="special-offer-wrapper"> <img src="img/demos/real-estate/offers/2.jpeg" class="img-fluid" alt=""> <span class="special-offer-infos text-color-light pt-4"> </span> </span> </a>
 										</div>
 									</div>
 								</div>
@@ -778,13 +776,13 @@
 											<h4 class="text-light pt-4 m-0">Contacto Agentes</h4>
 											<div class="owl-carousel owl-theme nav-bottom rounded-nav pl-1 pr-1 pt-3 m-0" data-plugin-options="{'items': 1, 'loop': false, 'dots': false, 'nav': true}">
 												<div class="pr-2 pl-2">
-													<a href="demo-real-estate-agents-detail.html" class="text-decoration-none"> <span class="agent-thumb"> <img class="img-fluid rounded-circle" src="img/team/team-11.jpg" alt /> </span> <span class="agent-infos text-light pt-3"> <strong class="text-uppercase font-weight-bold">Alberto Glez.</strong> <span class="font-weight-light">044 333 667 0789</span> <span class="font-weight-light">alberto@zeivynox.com.mx</span> </span> </a>
+													<a href="details.php" class="text-decoration-none"> <span class="agent-thumb"> <img class="img-fluid rounded-circle" src="img/team/team-11.jpg" alt /> </span> <span class="agent-infos text-light pt-3"> <strong class="text-uppercase font-weight-bold">Alberto Glez.</strong> <span class="font-weight-light">044 333 667 0789</span> <span class="font-weight-light">alberto@zeivynox.com.mx</span> </span> </a>
 												</div>
 												<div class="pr-2 pl-2">
-													<a href="demo-real-estate-agents-detail.html" class="text-decoration-none"> <span class="agent-thumb"> <img class="img-fluid rounded-circle" src="img/team/team-12.jpg" alt /> </span> <span class="agent-infos text-light pt-3"> <strong class="text-uppercase font-weight-bold">Sofia Glez.</strong> <span class="font-weight-light">044 331 082 4895</span> <span class="font-weight-light">sofia@zeivynox.com.mx</span> </span> </a>
+													<a href="details.php" class="text-decoration-none"> <span class="agent-thumb"> <img class="img-fluid rounded-circle" src="img/team/team-12.jpg" alt /> </span> <span class="agent-infos text-light pt-3"> <strong class="text-uppercase font-weight-bold">Sofia Glez.</strong> <span class="font-weight-light">044 331 082 4895</span> <span class="font-weight-light">sofia@zeivynox.com.mx</span> </span> </a>
 												</div>
 												<div class="pr-2 pl-2">
-													<a href="demo-real-estate-agents-detail.html" class="text-decoration-none"> <span class="agent-thumb"> <img class="img-fluid rounded-circle" src="img/team/team-13.jpg" alt /> </span> <span class="agent-infos text-light pt-3"> <strong class="text-uppercase font-weight-bold">Marco Valerio</strong> <span class="font-weight-light">(477) 329-1974</span> <span class="font-weight-light">ventasleon@zeivynox.com.mx</span> </span> </a>
+													<a href="details.php" class="text-decoration-none"> <span class="agent-thumb"> <img class="img-fluid rounded-circle" src="img/team/team-13.jpg" alt /> </span> <span class="agent-infos text-light pt-3"> <strong class="text-uppercase font-weight-bold">Marco Valerio</strong> <span class="font-weight-light">(477) 329-1974</span> <span class="font-weight-light">ventasleon@zeivynox.com.mx</span> </span> </a>
 												</div>
 											</div>
 										</div>
@@ -817,7 +815,6 @@
 						</div>
 					</div>
 				</div>
-
 				<footer id="footer" class="m-0 custom-background-color-1">
 					<div class="container">
 						<div class="row">
@@ -838,10 +835,10 @@
 								<nav class="nav-footer">
 									<ul class="custom-list-style-1 mb-0">
 										<li>
-											<a href="demo-real-estate-properties.html" class="custom-color-2 text-decoration-none"> Catalogo </a>
+											<a href="catalogue.php" class="custom-color-2 text-decoration-none"> Catalogo </a>
 										</li>
 										<li>
-											<a href="demo-real-estate-properties.html" class="custom-color-2 text-decoration-none"> Metodos de Trabajo </a>
+											<a href="catalogue.php" class="custom-color-2 text-decoration-none"> Metodos de Trabajo </a>
 										</li>
 									</ul>
 								</nav>
@@ -947,6 +944,19 @@
 			
 			products.list_products({
 				div: 'listingLoadMoreWrapper',
+				edit: '<?php echo $_REQUEST['edit'] ?>'
+			});
+			
+			products.list_products({
+				div: 'div_ofertas',
+				view: 'list_products_offers',
+				edit: '<?php echo $_REQUEST['edit'] ?>'
+			});
+			
+			products.list_products({
+				limit: 10,
+				div: 'div_products_main',
+				view: 'list_products_main',
 				edit: '<?php echo $_REQUEST['edit'] ?>'
 			});
 		</script>
