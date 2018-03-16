@@ -52,14 +52,14 @@
 	// echo "<pre>", print_r($rows), "</pre>";
 	
 	foreach ($rows as $key => $value) { 
-		$image = explode(', ', $value['images']); ?>
+		$image = explode(', ', $value['images']); 
+		$value['edit'] = 1;
+		$value['div'] = 'div_container';
+		$product = json_encode($value);
+		$product = str_replace('"', "'", $product); ?>
 		
 		<div class="col-md-6 col-lg-4 p-3 isotope-item"><?php
-			if ($_REQUEST['edit'] == 1) {
-				$value['edit'] = 1;
-				$value['div'] = 'contenedor';
-				$product = json_encode($value);
-				$product = str_replace('"', "'", $product); ?>
+			if ($_REQUEST['edit'] == 1) { ?>
 				
 				<a 
 					href="#contenedor"
@@ -69,7 +69,10 @@
 				</a><?php
 			} ?>
 			<div class="listing-item">
-				<a href="catalogue.php" class="text-decoration-none">
+				<a 
+					onclick="products.details(<?php echo $product ?>)"
+					href="#div_container" 
+					class="text-decoration-none">
 					<div class="thumb-info thumb-info-lighten">
 						<div class="thumb-info-wrapper m-0" style="height: 185px; width: 250px">
 							<img 

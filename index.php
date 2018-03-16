@@ -521,7 +521,7 @@
 						
 					</div>
 				</div>
-				<div class="container">
+				<div class="container" id="div_container">
 					<div class="row mt-5">
 						<div class="col-lg-9">
 							<div class="row">
@@ -953,12 +953,12 @@
 				edit: '<?php echo $_REQUEST['edit'] ?>'
 			});
 			
-			products.list_products({
-				limit: 10,
-				div: 'div_products_main',
-				view: 'list_products_main',
-				edit: '<?php echo $_REQUEST['edit'] ?>'
-			});
+			// products.list_products({
+				// limit: 10,
+				// div: 'div_products_main',
+				// view: 'list_products_main',
+				// edit: '<?php //echo $_REQUEST['edit'] ?>'
+			// });
 		</script>
 	</body>
 </html>
