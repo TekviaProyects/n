@@ -16,7 +16,11 @@
 		<div class="col-lg-9">
 			<div class="row">
 				<div class="col-lg-7">
-					<span class="thumb-info-listing-type thumb-info-listing-type-detail background-color-secondary text-uppercase text-color-light font-weight-semibold p-2 pl-3 pr-3">+</span>
+					<a 
+						href="index.php" 
+						class="thumb-info-listing-type thumb-info-listing-type-detail background-color-secondary text-uppercase text-color-light font-weight-semibold p-2 pl-3 pr-3 text-decoration-none">
+						Regresar
+					</a>
 					<div class="thumb-gallery">
 						<div class="lightbox" data-plugin-options="{'delegate': 'a', 'type': 'image', 'gallery': {'enabled': true}}">
 							<div class="owl-carousel owl-theme manual thumb-gallery-detail show-nav-hover owl-loaded owl-drag" id="thumbGalleryDetail">
@@ -119,10 +123,8 @@
 							</tr>
 						</tbody>
 					</table>
-
 				</div>
 			</div>
-
 			<div class="row">
 				<div class="col">
 					<h4 class="mt-3 mb-3">Descripción</h4>

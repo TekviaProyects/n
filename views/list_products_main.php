@@ -93,6 +93,7 @@
 				style="background-color: black; padding: 30px; overflow: hidden;">
 				<div style="margin-top: -70px; margin-left: -170px; width: 360px; height: 360px">
 					<img 
+						width="100%"
 						class="img-fluid" 
 						onerror="this.onerror=null;this.src='img/apple-touch-icon.png';" 
 						src="<?php echo $image[0] ?>" />
